@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Students</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="main.js" defer></script>
+</head>
+<body>
+    <div id="app">
+		<input type="text" name="search" v-model="search"><br>
+		<table class="table table-dark">
+			<tr v-for="item in students"  v-bind:key="item._id"> 
+				<td>{{item.name}}</td><td><input type="checkbox" v-model="item.isDonePr"></td><td>{{item.group}}</td><td><a href = "#" @click="deleteStudent(item._id)">Видалити</a></td>
+			</tr>
+		</table>
+
+			<input v-model="student.name">
+			<input type="checkbox" v-model="student.isDonePr">
+			<select v-model="student.group">
+				<option value="RPZ 19 1/9">RPZ 19 1/9</option>
+				<option value="RPZ 19 2/9">RPZ 19 2/9</option>
+			</select>
+			<button @click="addStudent()">Add student</button>
+
+	</div>
+
+	<br>
+	<hr>
+	<div class="converter">
+		<h3>Currency Converter</h3>
+		<p>Enter Amount: 
+			<input v-model="sum">
+		</p>
+		<p>Convert From: 
+			<select v-model="">
+				<option value="USD">USD</option>
+				<option value="UAH">UAH</option>
+			</select>
+		</p>
+		<p>Convert To: 
+			<select v-model="">
+				<option value="UAH">UAH</option>
+				<option value="USD">USD</option>
+			</select>
+		</p>
+        <button @click="convert()">Конвертувати</button>
+		<!-- <p>{{ ${sum} equals ${result} }}</p> -->
+		<p v-model="" type="text"></p>
+   </div>
+
+
+</body>
+</html>
