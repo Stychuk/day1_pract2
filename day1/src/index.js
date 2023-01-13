@@ -9,8 +9,10 @@ createApp({
             bank_conv: [],
             search:'',
             student: {"name": "", isDonePr: false, group: ""},
-            sum:'',
-            rateCross: '',
+            sum:0,
+            from:'',
+            to:'',
+            rateCross: 0,
             result: ''
         }
      },	 
@@ -18,10 +20,6 @@ createApp({
         axios.get("http://34.82.81.113:3000/students").then((response) => {
             console.log(response.data);
             this.students = response.data;
-        }),
-        axios.get("https://api.monobank.ua/bank/currency").then((response) => {
-            console.log(response.data);
-            this.bank_conv = response.data;
         })
      },
      methods: {
@@ -34,8 +32,5 @@ createApp({
             this.student._id = this.students.length+1;
             this.students.push({ ...this.student });
         },
-        convert() { 
-            this.result = this.sum * this.rateCross;
-        }
      },
  }).mount('#app');

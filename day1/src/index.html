@@ -17,40 +17,13 @@
 			</tr>
 		</table>
 
-			<input v-model="student.name">
-			<input type="checkbox" v-model="student.isDonePr">
-			<select v-model="student.group">
-				<option value="RPZ 19 1/9">RPZ 19 1/9</option>
-				<option value="RPZ 19 2/9">RPZ 19 2/9</option>
-			</select>
-			<button @click="addStudent()">Add student</button>
-
+		<input v-model="student.name">
+		<input type="checkbox" v-model="student.isDonePr">
+		<select v-model="student.group">
+			<option value="RPZ 19 1/9">RPZ 19 1/9</option>
+			<option value="RPZ 19 2/9">RPZ 19 2/9</option>
+		</select>
+		<button @click="addStudent()">Add student</button>
 	</div>
-
-	<br>
-	<hr>
-	<div class="converter">
-		<h3>Currency Converter</h3>
-		<p>Enter Amount: 
-			<input v-model="sum">
-		</p>
-		<p>Convert From: 
-			<select v-model="">
-				<option value="USD">USD</option>
-				<option value="UAH">UAH</option>
-			</select>
-		</p>
-		<p>Convert To: 
-			<select v-model="">
-				<option value="UAH">UAH</option>
-				<option value="USD">USD</option>
-			</select>
-		</p>
-        <button @click="convert()">Конвертувати</button>
-		<!-- <p>{{ ${sum} equals ${result} }}</p> -->
-		<p v-model="" type="text"></p>
-   </div>
-
-
 </body>
 </html>
